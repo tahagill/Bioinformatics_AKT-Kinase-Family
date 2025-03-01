@@ -96,7 +96,7 @@ cd Bioinformatics_AKT-Kinase-Family
 
 2. **Install Dependencies**:
 ```bash
-pip install biopython pandas matplotlib seaborn plotly py3Dmol logomaker requests
+pip install -r requirements.txt
 ```
 
 3. **Run the Script**:
@@ -135,28 +135,6 @@ python main.py
 
 ### Pathway Analysis:
 - Visualizes the PI3K-AKT-mTOR pathway using KEGG data.
-
-## Example Outputs
-
-### Sequence Logo:
-Visualizes conserved regions in aligned AKT sequences.
-![Sequence Logo](./results/sequence_logo.png)
-
-### Phylogenetic Tree:
-Shows the evolutionary relationship between AKT1, AKT2, and AKT3.
-![Phylogenetic Tree](./results/phylogenetic_tree.png)
-
-### 3D Structure with Mutations:
-Highlights mutation sites in the 3D structure of AKT1.
-![3D Structure](./results/akt1_mutations_3d.png)
-
-### Domain Architecture:
-Visualizes functional domains in AKT proteins.
-![Domain Architecture](./results/domain_architecture.png)
-
-### Expression Heatmap:
-Shows expression levels of AKT genes across human tissues.
-![Expression Heatmap](./results/expression_heatmap.png)
 
 ## Future Enhancements
 - Integrate more mutation databases (e.g., COSMIC, dbSNP).
