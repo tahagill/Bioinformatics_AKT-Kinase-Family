@@ -1,0 +1,10 @@
+biopython
+pandas
+matplotlib
+seaborn
+plotly
+py3Dmol
+logomaker
+requests
+tqdm
+numpy
