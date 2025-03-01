@@ -1,202 +1,169 @@
-AKT Kinase Family Bioinformatics Analysis
-Overview
+# AKT Kinase Family Bioinformatics Analysis
+
+## Overview
 This project focuses on the AKT kinase family, specifically AKT1, AKT2, and AKT3, which are critical regulators of cell survival, growth, and metabolism. The project performs a comprehensive bioinformatics analysis of these genes, including sequence alignment, phylogenetic tree construction, mutation analysis, 3D structure visualization, and pathway analysis. The goal is to understand the structural, functional, and evolutionary relationships between these genes and their roles in diseases such as cancer and metabolic disorders.
 
-Genes Involved
-AKT1: Plays a key role in cell survival and growth. Mutations in AKT1 are associated with cancers like breast cancer and Proteus syndrome.
+## Genes Involved
+- **AKT1**: Plays a key role in cell survival and growth. Mutations in AKT1 are associated with cancers like breast cancer and Proteus syndrome.
+- **AKT2**: Involved in insulin signaling and glucose metabolism. Mutations in AKT2 are linked to severe insulin resistance and type 2 diabetes.
+- **AKT3**: Primarily expressed in the brain and associated with brain development disorders like megalencephaly.
 
-AKT2: Involved in insulin signaling and glucose metabolism. Mutations in AKT2 are linked to severe insulin resistance and type 2 diabetes.
+## Bioinformatics Tools Used
+- **ClustalOmega**: For multiple sequence alignment (MSA) of AKT protein and DNA sequences.
+- **Phylogenetic Tree Construction**: Using Biopython's DistanceTreeConstructor to build evolutionary trees.
+- **3D Structure Visualization**: Using py3Dmol to visualize protein structures and map mutations.
+- **Sequence Logo Generation**: Using logomaker to visualize conserved regions in aligned sequences.
+- **Heatmaps and Plots**: Using matplotlib, seaborn, and plotly for data visualization.
 
-AKT3: Primarily expressed in the brain and associated with brain development disorders like megalencephaly.
+## Databases Used
+- **NCBI (National Center for Biotechnology Information)**: For fetching DNA and protein sequences, ClinVar mutation data, and PDB structures.
+- **UniProt**: For domain architecture and functional annotation of AKT proteins.
+- **KEGG (Kyoto Encyclopedia of Genes and Genomes)**: For pathway analysis of the PI3K-AKT-mTOR signaling pathway.
+- **GTEx (Genotype-Tissue Expression)**: For gene expression analysis across human tissues.
 
-Bioinformatics Tools Used
-ClustalOmega: For multiple sequence alignment (MSA) of AKT protein and DNA sequences.
+## Tech Stack
+- **Python**: Primary programming language for bioinformatics analysis.
+- **Biopython**: For sequence manipulation, alignment, and phylogenetic tree construction.
+- **Pandas**: For data manipulation and analysis.
+- **Matplotlib/Seaborn/Plotly**: For data visualization.
+- **py3Dmol**: For interactive 3D protein structure visualization.
+- **Google Colab**: For running the project in a cloud environment.
 
-Phylogenetic Tree Construction: Using Biopython's DistanceTreeConstructor to build evolutionary trees.
-
-3D Structure Visualization: Using py3Dmol to visualize protein structures and map mutations.
-
-Sequence Logo Generation: Using logomaker to visualize conserved regions in aligned sequences.
-
-Heatmaps and Plots: Using matplotlib, seaborn, and plotly for data visualization.
-
-Databases Used
-NCBI (National Center for Biotechnology Information): For fetching DNA and protein sequences, ClinVar mutation data, and PDB structures.
-
-UniProt: For domain architecture and functional annotation of AKT proteins.
-
-KEGG (Kyoto Encyclopedia of Genes and Genomes): For pathway analysis of the PI3K-AKT-mTOR signaling pathway.
-
-GTEx (Genotype-Tissue Expression): For gene expression analysis across human tissues.
-
-Tech Stack
-Python: Primary programming language for bioinformatics analysis.
-
-Biopython: For sequence manipulation, alignment, and phylogenetic tree construction.
-
-Pandas: For data manipulation and analysis.
-
-Matplotlib/Seaborn/Plotly: For data visualization.
-
-py3Dmol: For interactive 3D protein structure visualization.
-
-Google Colab: For running the project in a cloud environment.
-
-Project Structure
+## Project Structure
 The project is organized into the following directories:
 
-Copy
-kinase_project/
-├── data/
-│   ├── sequences/          # DNA and protein sequences for AKT1, AKT2, AKT3
-│   ├── mutations/          # ClinVar mutation data
-│   ├── structures/         # PDB files for AKT1, AKT2, AKT3
-├── results/                # Output files (plots, alignments, trees, etc.)
-├── kinase_project_omega.py # Main script for the analysis
-Questions Answered by the Codebase
-Sequence Analysis:
+```
+Bioinformatics_AKT-Kinase-Family/
+├── codebase.py              # Functions pipeline for the analysis
+├── main.py                  # Main script to execute the pipeline
+├── requirements.txt         # Required Python packages
+├── README.md                # This file
+├── .gitignore               # Git ignore file
+├── temp_input_protein.fasta # Temporary input file for protein sequences
+└── kinase_project/          # Created after running the code
+    ├── data/
+    │   ├── sequences/       # DNA and protein sequences for AKT1, AKT2, AKT3
+    │   ├── mutations/       # ClinVar mutation data
+    │   ├── structures/      # PDB files for AKT1, AKT2, AKT3
+    └── results/             # Output files (plots, alignments, trees, etc.)
+```
 
-What are the conserved regions in the AKT family proteins?
+## Questions Answered by the Codebase
 
-How do the DNA and protein sequences of AKT1, AKT2, and AKT3 compare?
+### Sequence Analysis:
+- What are the conserved regions in the AKT family proteins?
+- How do the DNA and protein sequences of AKT1, AKT2, and AKT3 compare?
 
-Phylogenetic Analysis:
+### Phylogenetic Analysis:
+- What is the evolutionary relationship between AKT1, AKT2, and AKT3?
 
-What is the evolutionary relationship between AKT1, AKT2, and AKT3?
+### Mutation Analysis:
+- What are the clinically significant mutations in the AKT genes?
+- How do these mutations affect protein structure and function?
 
-Mutation Analysis:
+### 3D Structure Visualization:
+- Where are the mutations located in the 3D structure of AKT proteins?
+- What is the impact of mutations on protein domains (e.g., PH domain, kinase domain)?
 
-What are the clinically significant mutations in the AKT genes?
+### Domain Architecture:
+- What are the functional domains in AKT1, AKT2, and AKT3?
+- How do these domains contribute to protein function?
 
-How do these mutations affect protein structure and function?
+### Expression Analysis:
+- How are AKT1, AKT2, and AKT3 expressed across different human tissues?
+- Which tissues show the highest expression of each AKT gene?
 
-3D Structure Visualization:
+### Pathway Analysis:
+- How do AKT genes fit into the PI3K-AKT-mTOR signaling pathway?
+- What are the key interactions and regulatory mechanisms in this pathway?
 
-Where are the mutations located in the 3D structure of AKT proteins?
+## How to Run the Project
 
-What is the impact of mutations on protein domains (e.g., PH domain, kinase domain)?
+### Prerequisites
+- Python 3.x
+- Required Python packages: biopython, pandas, matplotlib, seaborn, plotly, py3Dmol, logomaker, requests
+- Google Colab (optional, for cloud execution)
 
-Domain Architecture:
+### Steps to Run
 
-What are the functional domains in AKT1, AKT2, and AKT3?
+### Direct Link to Google Colab Notebook (Preffereed as less dependancy issues): https://colab.research.google.com/drive/1jPHj7jZNLtjZW6wW1zwzeK8uDN3d8QRS?usp=sharing
 
-How do these domains contribute to protein function?
+1. **Clone the Repository**:
+```bash
+git clone https://github.com/tahagill/Bioinformatics_AKT-Kinase-Family.git
+cd Bioinformatics_AKT-Kinase-Family
+```
 
-Expression Analysis:
-
-How are AKT1, AKT2, and AKT3 expressed across different human tissues?
-
-Which tissues show the highest expression of each AKT gene?
-
-Pathway Analysis:
-
-How do AKT genes fit into the PI3K-AKT-mTOR signaling pathway?
-
-What are the key interactions and regulatory mechanisms in this pathway?
-
-How to Run the Project
-Prerequisites
-Python 3.x
-
-Required Python packages: biopython, pandas, matplotlib, seaborn, plotly, py3Dmol, logomaker, requests
-
-Google Colab (optional, for cloud execution)
-
-Steps to Run
-Clone the Repository:
-
-bash
-Copy
-git clone https://github.com/your-username/akt-kinase-project.git
-cd akt-kinase-project
-Install Dependencies:
-
-bash
-Copy
+2. **Install Dependencies**:
+```bash
 pip install biopython pandas matplotlib seaborn plotly py3Dmol logomaker requests
-Run the Script:
+```
 
-If using Google Colab, upload the script and run it in the Colab environment.
+3. **Run the Script**:
+   - If using Google Colab, upload the script and run it in the Colab environment.
+   - If running locally, execute the script:
+```bash
+python main.py
+```
 
-If running locally, execute the script:
+4. **View Results**:
+   - All outputs (plots, alignments, trees, etc.) will be saved in the `results/` directory.
+   - Interactive 3D visualizations will be displayed in the notebook or saved as HTML files.
+   - All data will be saved in `data/` directory 
 
-bash
-Copy
-python kinase_project_omega.py
-View Results:
+## Key Features of the Codebase
 
-All outputs (plots, alignments, trees, etc.) will be saved in the results/ directory.
+### Sequence Fetching and Alignment:
+- Fetches DNA and protein sequences from NCBI.
+- Performs multiple sequence alignment (MSA) using ClustalOmega.
 
-Interactive 3D visualizations will be displayed in the notebook or saved as HTML files.
+### Phylogenetic Tree Construction:
+- Builds a phylogenetic tree to visualize evolutionary relationships.
 
-Key Features of the Codebase
-Sequence Fetching and Alignment:
+### Multiple Sequence Alignment & Sequence Alignment:
+-  Uses ClustalOmega 
 
-Fetches DNA and protein sequences from NCBI.
+### Mutation Analysis:
+- Fetches ClinVar mutation data and maps mutations to protein structures.
+- Highlights mutations in 3D protein structures.
 
-Performs multiple sequence alignment (MSA) using ClustalOmega.
+### Domain Architecture:
+- Fetches domain information from UniProt and visualizes domain architecture.
 
-Phylogenetic Tree Construction:
+### Expression Analysis:
+- Analyzes gene expression data from GTEx and Human Protein Atlas.
 
-Builds a phylogenetic tree to visualize evolutionary relationships.
+### Pathway Analysis:
+- Visualizes the PI3K-AKT-mTOR pathway using KEGG data.
 
-Mutation Analysis:
+## Example Outputs
 
-Fetches ClinVar mutation data and maps mutations to protein structures.
-
-Highlights mutations in 3D protein structures.
-
-Domain Architecture:
-
-Fetches domain information from UniProt and visualizes domain architecture.
-
-Expression Analysis:
-
-Analyzes gene expression data from GTEx and Human Protein Atlas.
-
-Pathway Analysis:
-
-Visualizes the PI3K-AKT-mTOR pathway using KEGG data.
-
-Example Outputs
-Sequence Logo:
-
+### Sequence Logo:
 Visualizes conserved regions in aligned AKT sequences.
-Sequence Logo
+![Sequence Logo](./results/sequence_logo.png)
 
-Phylogenetic Tree:
-
+### Phylogenetic Tree:
 Shows the evolutionary relationship between AKT1, AKT2, and AKT3.
-Phylogenetic Tree
+![Phylogenetic Tree](./results/phylogenetic_tree.png)
 
-3D Structure with Mutations:
-
+### 3D Structure with Mutations:
 Highlights mutation sites in the 3D structure of AKT1.
-3D Structure
+![3D Structure](./results/akt1_mutations_3d.png)
 
-Domain Architecture:
-
+### Domain Architecture:
 Visualizes functional domains in AKT proteins.
-Domain Architecture
+![Domain Architecture](./results/domain_architecture.png)
 
-Expression Heatmap:
-
+### Expression Heatmap:
 Shows expression levels of AKT genes across human tissues.
-Expression Heatmap
+![Expression Heatmap](./results/expression_heatmap.png)
 
-Future Enhancements
-Integrate more mutation databases (e.g., COSMIC, dbSNP).
+## Future Enhancements
+- Integrate more mutation databases (e.g., COSMIC, dbSNP).
+- Add machine learning models to predict the impact of mutations.
+- Expand pathway analysis to include other signaling pathways.
 
-Add machine learning models to predict the impact of mutations.
 
-Expand pathway analysis to include other signaling pathways.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Acknowledgments
-NCBI, UniProt, KEGG, and GTEx for providing the data used in this project.
-
-Biopython, Pandas, and other open-source libraries for enabling this analysis.
-
-Feel free to customize this README further to suit your needs! Let me know if you need additional details or modifications. 🚀
+## Acknowledgments
+- NCBI, UniProt, KEGG, and GTEx for providing the data used in this project.
+- Biopython, Pandas, and other open-source libraries for enabling this analysis.
