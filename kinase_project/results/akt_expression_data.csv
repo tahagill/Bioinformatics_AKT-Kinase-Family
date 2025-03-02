@@ -1,0 +1,88 @@
+Gene,Tissue,Expression
+AKT1,Brain,16.0
+AKT2,Brain,15.0
+AKT3,Brain,30.0
+AKT1,Adipose Tissue,20.0
+AKT2,Adipose Tissue,30.0
+AKT3,Adipose Tissue,10.0
+AKT1,Liver,20.0
+AKT2,Liver,30.0
+AKT3,Liver,10.0
+AKT1,Muscle,20.0
+AKT2,Muscle,30.0
+AKT3,Muscle,10.0
+AKT1,Pancreas,20.0
+AKT2,Pancreas,25.5
+AKT3,Pancreas,10.0
+AKT1,Skin,30.0
+AKT2,Skin,15.0
+AKT3,Skin,10.0
+AKT1,Blood,30.0
+AKT2,Blood,15.0
+AKT3,Blood,10.0
+AKT1,Lung,20.0
+AKT2,Lung,15.0
+AKT3,Lung,15.0
+AKT1,Heart,16.0
+AKT2,Heart,15.0
+AKT3,Heart,15.0
+AKT1,Blood Vessel,20.0
+AKT2,Blood Vessel,15.0
+AKT3,Blood Vessel,10.0
+AKT1,Bladder,20.0
+AKT2,Bladder,15.0
+AKT3,Bladder,10.0
+AKT1,Cervix Uteri,20.0
+AKT2,Cervix Uteri,15.0
+AKT3,Cervix Uteri,10.0
+AKT1,Adrenal Gland,20.0
+AKT2,Adrenal Gland,15.0
+AKT3,Adrenal Gland,10.0
+AKT1,Kidney,20.0
+AKT2,Kidney,15.0
+AKT3,Kidney,10.0
+AKT1,Fallopian Tube,20.0
+AKT2,Fallopian Tube,15.0
+AKT3,Fallopian Tube,10.0
+AKT1,Esophagus,20.0
+AKT2,Esophagus,15.0
+AKT3,Esophagus,10.0
+AKT1,Colon,20.0
+AKT2,Colon,15.0
+AKT3,Colon,10.0
+AKT1,Breast,20.0
+AKT2,Breast,15.0
+AKT3,Breast,10.0
+AKT1,Nerve,20.0
+AKT2,Nerve,15.0
+AKT3,Nerve,10.0
+AKT1,Pituitary,20.0
+AKT2,Pituitary,15.0
+AKT3,Pituitary,10.0
+AKT1,Ovary,20.0
+AKT2,Ovary,15.0
+AKT3,Ovary,10.0
+AKT1,Prostate,20.0
+AKT2,Prostate,15.0
+AKT3,Prostate,10.0
+AKT1,Small Intestine,20.0
+AKT2,Small Intestine,15.0
+AKT3,Small Intestine,10.0
+AKT1,Spleen,20.0
+AKT2,Spleen,15.0
+AKT3,Spleen,10.0
+AKT1,Stomach,20.0
+AKT2,Stomach,15.0
+AKT3,Stomach,10.0
+AKT1,Testis,20.0
+AKT2,Testis,15.0
+AKT3,Testis,10.0
+AKT1,Thyroid,20.0
+AKT2,Thyroid,15.0
+AKT3,Thyroid,10.0
+AKT1,Uterus,20.0
+AKT2,Uterus,15.0
+AKT3,Uterus,10.0
+AKT1,Vagina,20.0
+AKT2,Vagina,15.0
+AKT3,Vagina,10.0

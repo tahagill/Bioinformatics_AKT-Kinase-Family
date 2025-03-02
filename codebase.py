@@ -6,31 +6,23 @@
 
 # If not running on google colab just do pip install -r requirements.txt on ur terminal
 
-
 import os
-import io
 import re
-import json
 import requests
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import plotly.express as px
 import plotly.graph_objects as go
 import logomaker as lm
 import py3Dmol
 
 from Bio import Entrez, SeqIO, Phylo, AlignIO
 from Bio.Phylo.TreeConstruction import DistanceCalculator, DistanceTreeConstructor
-from Bio.SeqUtils import seq1
-from Bio.SeqRecord import SeqRecord
 from Bio.PDB.PDBParser import PDBParser
 from IPython.display import HTML, display, Image
-from tqdm.notebook import tqdm
-from datetime import datetime
+from tqdm.auto import tqdm  
 from matplotlib.lines import Line2D
-from matplotlib.colors import LinearSegmentedColormap, to_hex
 
 Entrez.email = "tahagill99@gmail.com"  ## you can add ur email too.
 
@@ -1360,6 +1352,8 @@ def analyze_pathways():
     except Exception as e:
         print(f"Pathway error: {str(e)}")
 
+    # Build document properly
+
 def run_pipeline():
     """Run the entire Project pipeline for AKT gene analysis."""
     try:
@@ -1438,6 +1432,11 @@ def run_pipeline():
 
         print("\n✅ Pipeline completed! All visualizations have been saved.")
         print(f"📁 Results directory: {results_dir}")
+
+        # Generate PDF report using ReportGenerator
+        from report_generator import ReportGenerator  # Import ReportGenerator
+        ReportGenerator().generate_report()
+        print(" PDF Report Created")
 
     except Exception as e:
         print(f"❌ Pipeline failed with error: {str(e)}")

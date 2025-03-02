@@ -1,0 +1,14 @@
+Gene,Disease,Mutation,Significance,Count
+AKT1,Proteus syndrome,E17K,Pathogenic,27
+AKT1,Breast cancer,E17K,Likely pathogenic,18
+AKT1,Colorectal cancer,E17K,Likely pathogenic,15
+AKT1,Ovarian cancer,Various,Uncertain,12
+AKT1,Endometrial cancer,Various,Likely pathogenic,9
+AKT2,Hypoglycemia,E17K,Pathogenic,8
+AKT2,Severe insulin resistance,Various,Pathogenic,13
+AKT2,Type 2 Diabetes,Various,Risk factor,22
+AKT2,Colorectal cancer,Various,Uncertain,7
+AKT3,Megalencephaly,E17K,Pathogenic,14
+AKT3,Hemimegalencephaly,Various,Pathogenic,11
+AKT3,Brain development disorders,Various,Likely pathogenic,19
+AKT3,Neurological disorders,Various,Uncertain,16

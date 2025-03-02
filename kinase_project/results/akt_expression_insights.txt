@@ -1,0 +1,36 @@
+AKT GENE FAMILY EXPRESSION ANALYSIS
+===================================
+
+Summary Statistics:
+           mean  median   min   max       std
+Gene                                         
+AKT1  20.413793    20.0  16.0  30.0  2.847521
+AKT2  16.913793    15.0  15.0  30.0  4.924554
+AKT3  11.034483    10.0  10.0  30.0  3.868211
+
+Tissues with highest expression for each AKT gene:
+   Gene Highest_Tissue  Expression
+0  AKT3          Brain        30.0
+1  AKT1           Skin        30.0
+2  AKT2          Liver        30.0
+
+Gene-specific insights:
+AKT1:
+- Highest expression in: Skin, Blood, Liver
+- Lowest expression in: Heart, Brain, Liver
+- Mean expression: 20.41 TPM
+
+AKT2:
+- Highest expression in: Liver, Muscle, Adipose Tissue
+- Lowest expression in: Skin, Blood, Cervix Uteri
+- Mean expression: 16.91 TPM
+
+AKT3:
+- Highest expression in: Brain, Lung, Heart
+- Lowest expression in: Skin, Blood, Liver
+- Mean expression: 11.03 TPM
+
+Comparative Insights:
+- AKT1 is the dominant isoform in: Skin, Blood, Cervix Uteri, Lung, Blood Vessel...
+- AKT2 is the dominant isoform in: Liver, Muscle, Adipose Tissue, Pancreas
+- AKT3 is the dominant isoform in: Brain
