@@ -1,10 +1,14 @@
-biopython
-pandas
-matplotlib
-seaborn
-plotly
-py3Dmol
-logomaker
-requests
-tqdm
-numpy
+# requirements.txt
+biopython==1.81
+pandas==2.0.3
+matplotlib==3.7.2
+seaborn==0.12.2
+plotly==5.15.0
+py3Dmol==2.0.3
+logomaker==0.8
+requests==2.31.0
+tqdm==4.65.0
+numpy==1.24.3
+reportlab==4.0.4
+ipython==8.22.2
+pillow==9.5.0  # Critical addition

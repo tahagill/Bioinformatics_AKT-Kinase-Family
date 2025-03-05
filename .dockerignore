@@ -1,0 +1,7 @@
+# Docker ignore 
+**/__pycache__
+**/.git
+**/.DS_Store
+**/results/*
+**/data/*
+*.pyc

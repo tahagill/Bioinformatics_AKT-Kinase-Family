@@ -458,49 +458,54 @@ def mutation_analysis():
     print("Interactive 3D structure also displayed in notebook")
 
 # CLINVAR INTEGRATION
+
 def fetch_clinvar_data():
-    """Fetch ClinVar data only if not already downloaded"""
+    """Fetch ClinVar data with timeout and memory optimizations"""
     filename = os.path.join(mutation_dir, "akt_mutations.csv")
     
-    # Check if file exists and is valid (prevents redundant download)
     if os.path.exists(filename):
-        try:
-            existing_df = pd.read_csv(filename)
-            
-            # Basic validation of required columns
-            required_cols = ['GeneSymbol', 'ProteinChange', 'ClinicalSignificance']
-            if all(col in existing_df.columns for col in required_cols):
-                print(f"✓ Using existing ClinVar data from {filename}")
-                return existing_df
-            else:
-                print("Existing file missing required columns, redownloading...")
-        except Exception as e:
-            print(f"Corrupted existing file: {str(e)}, redownloading...")
+        return pd.read_csv(filename)
 
-    # File doesn't exist or is invalid - download fresh
     try:
-        print("Downloading latest ClinVar data...")
+        print("Downloading ClinVar data (compressed)...")
         clinvar_url = "https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/variant_summary.txt.gz"
-        df = pd.read_csv(clinvar_url, sep='\t', compression='gzip', dtype={'Name': str})
+        
+        # Stream download to avoid memory overload
+        with requests.get(clinvar_url, stream=True, timeout=120) as r:
+            r.raise_for_status()
+            with open(filename + '.tmp', 'wb') as f:
+                for chunk in r.iter_content(chunk_size=8192):
+                    f.write(chunk)
 
+        # Load with optimized dtype specification
+        dtype = {
+            'GeneSymbol': 'category',
+            'ClinicalSignificance': 'category',
+            'Type': 'category',
+            'Name': 'string'
+        }
+        
+        df = pd.read_csv(filename + '.tmp', sep='\t', compression='gzip',
+                        usecols=['GeneSymbol', 'ClinicalSignificance', 'Type', 'Name'],
+                        dtype=dtype)
+        
+        # Filter first, process later
         akt_mutations = df[
             (df['GeneSymbol'].isin(['AKT1', 'AKT2', 'AKT3'])) &
-            (df['Type'] == 'single nucleotide variant') &
-            (df['Assembly'] == 'GRCh38')
+            (df['Type'] == 'single nucleotide variant')
         ].copy()
 
+        # Extract ProteinChange
         akt_mutations['ProteinChange'] = akt_mutations['Name'].str.extract(r'(p\.[A-Za-z]+\d+[A-Za-z]+)')
-        akt_mutations.dropna(subset=['ProteinChange'], inplace=True)
-        
-        # Save validated data
+        akt_mutations = akt_mutations[['GeneSymbol', 'ProteinChange', 'ClinicalSignificance']]
         akt_mutations.to_csv(filename, index=False)
-        print(f"Saved new ClinVar data to {filename}")
+        
         return akt_mutations
 
     except Exception as e:
         print(f"ClinVar error: {str(e)}")
-        return pd.DataFrame(columns=['GeneSymbol', 'ProteinChange', 'ClinicalSignificance'])
-
+        return pd.DataFrame()
+    
 def validate_clinvar_data():
     """Test this in separate cell"""
     filename = os.path.join(mutation_dir, "akt_mutations.csv")
@@ -1368,11 +1373,15 @@ def run_pipeline():
         print("\n2️⃣ Fetching PDB structures...")
         fetch_pdb()
 
-        # Step 3: Fetch ClinVar data (even if synthetic)
+        # Step 3: ClinVar with error handling
         print("\n3️⃣ Fetching ClinVar mutations...")
         clinvar_df = fetch_clinvar_data()
+        if clinvar_df.empty:
+            raise ValueError("ClinVar data loading failed")
+
+        # Add this to see progress
         print("\nClinVar Data Preview:")
-        display(clinvar_df.head())  # Show first 5 entries
+        print(clinvar_df.head(3))  # Show first 3 rows
 
         # Step 4: Perform old alignment (ClustalO)
         print("\n4️⃣ Performing old sequence alignment (ClustalO)...")
@@ -1439,5 +1448,7 @@ def run_pipeline():
         print(" PDF Report Created")
 
     except Exception as e:
-        print(f"❌ Pipeline failed with error: {str(e)}")
+        print(f"\n❌ Pipeline failed: {str(e)}")
+        import traceback
+        traceback.print_exc()
 
