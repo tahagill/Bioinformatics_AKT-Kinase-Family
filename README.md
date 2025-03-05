@@ -96,6 +96,13 @@ Direct Link to Google Colab Notebook (Preffereed as less dependancy issues): htt
 ### Option 2: Docker (Recommended)
 
 #### Using Pre-built Image from Docker Hub (you need docker cli / hub installed)
+
+To pull the image from DockerHub:
+
+```bash
+docker pull tahagill/akt-analysis:latest
+```
+
 ```bash
 docker run -it --rm \
   -v "$(pwd)/results:/app/kinase_project/results" \
