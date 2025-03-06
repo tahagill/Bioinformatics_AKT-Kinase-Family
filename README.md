@@ -89,7 +89,7 @@ This repository contains tools for analyzing the AKT kinase protein family.
 
 ## How to Run the Project
 
-### Option 1: Google Colab (No Dependency Issues but might be outdated or not maintained poorly)
+### Option 1: Google Colab (No Dependency Issues but might be outdated or maintained poorly)
 
 Direct Link to Google Colab Notebook (Preffereed as less dependancy issues): https://colab.research.google.com/drive/1jPHj7jZNLtjZW6wW1zwzeK8uDN3d8QRS?usp=sharing]
 
@@ -123,7 +123,7 @@ docker run -it --rm \
 ```
 
 
-### Option 3: Local Execution
+### Option 3: Local Execution (old school)
 ```bash
 git clone https://github.com/tahagill/Bioinformatics_AKT-Kinase-Family.git
 cd Bioinformatics_AKT-Kinase-Family
@@ -153,7 +153,7 @@ latest: digest: sha256:bb1d64b8a14ff5f2fafed57eeb1f0e5dda3041e39fa9409ed529c9463
 ```
 
 ## Requirements
-* Docker (for Options 2 and 3)
+* Docker (for Option 2 )
 * Python 3.8+ (for Option 3)
 * See `requirements.txt` for Python dependencies
 
