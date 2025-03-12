@@ -1,6 +1,6 @@
 # AKT Kinase Family Bioinformatics Analysis
 
-### Update: Most recent update integrates Docker setup and auto PDF analysis report generation :)
+### Update: Most recent update integrates Docker setup and auto PDF analysis report generation
 
 ## Overview
 This project focuses on the AKT kinase family, specifically AKT1, AKT2, and AKT3, which are critical regulators of cell survival, growth, and metabolism. The project performs a comprehensive bioinformatics analysis of these genes, including sequence alignment, phylogenetic tree construction, mutation analysis, 3D structure visualization, and pathway analysis. The goal is to understand the structural, functional, and evolutionary relationships between these genes and their roles in diseases such as cancer and metabolic disorders.
